@@ -314,7 +314,9 @@ class Conveyer extends Component<ConveyerEvents> {
     const scrollAreaElement = this._scrollAreaElement;
     const horizontal = this._options.horizontal;
 
-    const size = horizontal ? scrollAreaElement.clientWidth : scrollAreaElement.clientHeight;
+    const size = horizontal
+      ? Math.ceil(scrollAreaElement.getClientRects()[0].width)
+      : Math.ceil(scrollAreaElement.getClientRects()[0].height);
     let scrollSize = horizontal ? scrollAreaElement.scrollWidth : scrollAreaElement.scrollHeight;
 
     // check decimal point
