@@ -12,7 +12,7 @@
     "docs:build": "jsdoc-to-mdx -c ./jsdoc-to-mdx.json",
     "docs:version": "node ./config/docs-version-up",
     "demo:build": "npm run docs:version && npm run build --prefix packages/docs",
-    "demo:deploy": "npm run demo:build && release-helper deploy --base @egjs/conveyer --dest demo --remote origin",
+    "demo:deploy": "release-helper deploy --base @egjs/conveyer --dest demo --remote origin",
     "release": "release-helper release --base @egjs/conveyer --remote upstream --branch main",
     "update:cfcs": "cfcs lerna update"
   },
